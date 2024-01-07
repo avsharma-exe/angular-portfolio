@@ -1,0 +1,41 @@
+.hero {
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+.hero_content {
+  padding-top: 10rem;
+}
+
+.hero_image {
+  img {
+    border-radius: 80% 20% 69% 31% / 56% 64% 36% 44% ;
+
+  }
+}
+
+.tech_stack {
+  padding-top: 5rem;
+}
+
+.hero_text {
+
+  p {
+    color: #555;
+    font-family: Mulish,sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  span svg{
+    color: black;
+  }
+}
+
+.logos ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
