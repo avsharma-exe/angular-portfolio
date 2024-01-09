@@ -1,0 +1,79 @@
+.btn-outline-info {
+  color: #1D9AF2;
+  background-color: #292D3E;
+  border: 1px solid #1D9AF2;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+  height: 32px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-info:hover {
+ box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+ transform: translateX(-3px);
+}
+
+.magic_wand {
+  position: absolute;
+  animation: x-motion 4s forwards;
+
+}
+
+
+@keyframes x-motion {
+  0% {
+    transform: translate(0px,10px);
+
+  }
+    20% {
+    transform: translate(60px,-40px);
+    font-size: 1.4rem;
+    color: #1D9AF2;
+  }
+    40% {
+    transform: translate(40px,-60px);
+    font-size: 1.8rem;
+    color: #0c5c96d7;
+  }
+    60% {
+    transform: translate(30px,-40px);
+    font-size: 2rem;
+    color: #064e82e4;
+  }
+    80% {
+    transform: translate(100px,20px);
+    font-size: 1.8rem;
+    color: #0f9bffe4;
+  }
+    100% {
+    transform: translate(0px,0px);
+    font-size: 1.2rem;
+    color: #cf0fffe4;
+  }
+}
+
+.animate-me {
+  animation-duration: 0.75s;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-name: animate;
+  animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+  animation-fill-mode: backwards;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes animate {
+  0% {
+  opacity: 0;
+  transform: rotateX(-120deg) scale(0.9,0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1,1);
+  }
+  }
+
+

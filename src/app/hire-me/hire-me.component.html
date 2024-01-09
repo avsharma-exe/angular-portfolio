@@ -1,9 +1,26 @@
 <section id="hire-me" class="hire-me">
   <div class="container">
-    <div class="row">
-      <div class="col-7 col-sm-12">
+    <div class="col-12 section-heading">
+      <h3>Hire-Me</h3>
+      <h4 class="">
+        Below is an Example of <span>{{ formType }}</span> form ! 🚀
+      </h4>
+    </div>
+    <div class="col-12 formTypeButton">
+      <p>
+        For a magic please ->
+        <span><button type="button" class="btn btn-outline-info" (click)="onClick()">Info</button>
+        </span>
+        <span><i [ngClass]="{'magic_wand' : !formFlag}" class="bi bi-magic"></i></span>
+      </p>
+    </div>
+    <div class="row justify-content-center align-item-center">
+      <div class="col-5 col-sm-10 animate-me" *ngIf="!formFlag">
+        <app-contact-t-form></app-contact-t-form>
+      </div>
+      <div class="col-5 col-sm-10 animate-me" *ngIf="formFlag">
         <app-contact-form></app-contact-form>
       </div>
     </div>
-  </div>col
+  </div>
 </section>
