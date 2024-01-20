@@ -1,0 +1,33 @@
+
+
+.btn-info {
+  color: #1D9AF2;
+  background-color: #292D3E;
+  border: 1px solid #1D9AF2;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+  height: 32px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-info:hover {
+ box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+ transform: translateX(-3px);
+}
+
+/* .form-container {
+  animation: animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes animate {
+  0%, 100%{
+      border-radius: 89% 11% 88% 12% / 14% 91% 9% 86%;
+  }
+  50%{
+      border-radius: 13% 87% 8% 92% / 94% 9% 91% 6% ;
+  }
+} */
+

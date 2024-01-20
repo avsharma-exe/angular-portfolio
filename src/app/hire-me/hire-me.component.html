@@ -1,26 +1,22 @@
-<section id="hire-me" class="hire-me">
+<section id="hire-me" class="hire-me pt-5 pb-5">
   <div class="container">
-    <div class="col-12 section-heading">
+    <div class="col-12 section-heading pb-3">
       <h3>Hire-Me</h3>
       <h4 class="">
         Below is an Example of <span>{{ formType }}</span> form ! 🚀
       </h4>
+      <div class="col-12 formTypeButton">
+        <h5>
+          For a different flavour of form ->
+          <span><button #switcher type="button" class="btn btn-outline-info" (click)="onClick()">Touch here</button>
+          </span>
+        </h5>
+      </div>
     </div>
-    <div class="col-12 formTypeButton">
-      <p>
-        For a magic please ->
-        <span><button type="button" class="btn btn-outline-info" (click)="onClick()">Info</button>
-        </span>
-        <span><i [ngClass]="{'magic_wand' : !formFlag}" class="bi bi-magic"></i></span>
-      </p>
-    </div>
+
     <div class="row justify-content-center align-item-center">
-      <div class="col-5 col-sm-10 animate-me" *ngIf="!formFlag">
-        <app-contact-t-form></app-contact-t-form>
-      </div>
-      <div class="col-5 col-sm-10 animate-me" *ngIf="formFlag">
-        <app-contact-form></app-contact-form>
-      </div>
+      <app-template-form class="shadow col-10 animate-me forms-here" *ngIf="!this.formFlag"></app-template-form>
+      <app-reactive-form class="shadow col-10 animate-me forms-here" *ngIf="this.formFlag"></app-reactive-form>
     </div>
   </div>
 </section>

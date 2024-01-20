@@ -1,0 +1,64 @@
+<div class="container reactive-container">
+  <form class="row reactive-form justify-content-center pt-5 pb-5"
+        [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <div class="form-group p-3 col-7">
+      <input type="text"
+             class="form-control"
+             formControlName="orgName"
+             placeholder="Enter your Org Name"
+             [ngClass]="{
+              'is-invalid' : reactiveForm.get('orgName').invalid && reactiveForm.get('orgName').touched
+             }">
+      <div class="invalid-feedback" [hidden]="reactiveForm.get('orgName').valid || !reactiveForm.get('orgName').touched">
+        <p *ngIf="reactiveForm.get('orgName').errors?.['required'] && reactiveForm.get('orgName').touched">Org Name is required</p>
+        <p *ngIf="reactiveForm.get('orgName').errors?.['minlength'] && reactiveForm.get('orgName').touched">Name must be more than 1 character</p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7">
+      <input type="text"
+             class="form-control"
+             formControlName="fullName"
+             placeholder="Enter your full name"
+             [ngClass]="{
+              'is-invalid' : reactiveForm.get('fullName').invalid && reactiveForm.get('fullName').touched
+             }">
+      <div class="invalid-feedback" [hidden]="reactiveForm.get('fullName').valid || !reactiveForm.get('fullName').touched">
+        <p *ngIf="reactiveForm.get('fullName').errors?.['required'] && reactiveForm.get('fullName').touched">Let me know what to call you</p>
+        <p *ngIf="reactiveForm.get('fullName').errors?.['minlength'] && reactiveForm.get('fullName').touched">Come on not a 1 word name</p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7">
+      <input type="email"
+             class="form-control"
+             formControlName="email"
+             placeholder="Enter your email id"
+             [ngClass]="{
+              'is-invalid' : reactiveForm.get('email').invalid && reactiveForm.get('email').touched
+             }">
+      <div class="invalid-feedback" [hidden]="reactiveForm.get('email').valid || !reactiveForm.get('email').touched">
+        <p *ngIf="reactiveForm.get('email').errors?.['required'] && reactiveForm.get('email').touched">Let me contact you by your mail</p>
+        <p *ngIf="reactiveForm.get('email').errors?.['email'] && reactiveForm.get('email').touched">Please share correct one</p>
+      </div>
+    </div>
+    <div class="form-group p-3 col-7">
+      <input type="number"
+             class="form-control"
+             formControlName="phoneNumber"
+             placeholder="Enter your mob No 88XX55XX88XX"
+             [ngClass]="{
+              'is-invalid' : reactiveForm.get('phoneNumber').invalid && reactiveForm.get('phoneNumber').touched
+             }">
+      <div class="invalid-feedback" [hidden]="reactiveForm.get('phoneNumber').valid || !reactiveForm.get('phoneNumber').touched">
+        <p *ngIf="reactiveForm.get('phoneNumber').errors?.['required'] && reactiveForm.get('phoneNumber').touched">I will call you !</p>
+        <p *ngIf="reactiveForm.get('phoneNumber').errors?.['invalidNumber'] && reactiveForm.get('phoneNumber').touched">Come on Indian standards 10 digit starting from 6-
+          9</p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7 ">
+      <button type="submit" class="form-control btn btn-info" [disabled]="!reactiveForm.valid">Submit</button>
+    </div>
+  </form>
+</div>
