@@ -57,7 +57,7 @@
 .animate-me {
   animation-duration: 0.75s;
   animation-duration: 1s;
-  animation-delay: 3s;
+  animation-delay: .75s;
   animation-name: animate;
   animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
   animation-fill-mode: backwards;

@@ -1,0 +1,84 @@
+<div class="container form-container">
+  <form (ngSubmit)="onSubmit()"
+        class="row  justify-content-center pt-5 pb-5"
+        #templateForm="ngForm">
+
+    <div class="form-group p-3 col-7">
+      <input type="text"
+             class="form-control"
+             name="orgName" placeholder="Tell me your Org Name" required
+             ngModel
+             #orgName = ngModel
+             [ngClass]="{
+              'is-invalid' : orgName.invalid && orgName.touched
+             }">
+      <div [hidden]="orgName.valid || !orgName.touched" class="invalid-feedback">
+        <p >
+          Please enter your Org Name
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7 ">
+      <input type="text"
+             class="form-control"
+             name="fullName" placeholder="Your Full Name please"
+             required
+             ngModel
+             #fName = ngModel
+             [ngClass]="{
+              'is-invalid' : fName.invalid && fName.touched
+             }">
+      <div [hidden]="fName.valid || !fName.touched" class="invalid-feedback">
+        <p *ngIf="fName?.errors?.['required']">
+          Name is required
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7 ">
+      <input type="text"
+             class="form-control"
+             name="email" placeholder="@ Your Email " required
+             ngModel
+             email
+             #email = ngModel
+             [ngClass]="{
+              'is-invalid' : email.invalid && email.touched
+             }">
+      <div [hidden]="email.valid || !email.touched" class="invalid-feedback">
+        <p *ngIf="email?.errors?.['required']">
+          Please enter your Email Id so I can reach you
+        </p>
+        <p *ngIf="email.touched && email.errors?.['email']">
+          Please enter a valid email
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7 ">
+      <input type="number"
+             class="form-control"
+             name="mobNo" placeholder="Enter your Mobile No 88XXX55XX " required
+             ngModel
+             #mobNo = ngModel
+             maxlength="10" minlength="10"
+             [ngClass]="{
+              'is-invalid' : mobNo.invalid && mobNo.touched
+             }">
+      <div [hidden]="mobNo.valid || !mobNo.touched" class="invalid-feedback">
+        <p *ngIf="mobNo?.errors?.['required']">
+          Please enter your Mobile Number so I can reach you !
+        </p>
+        <p *ngIf="mobNo.touched && mobNo.errors?.['minlength'] || mobNo.errors?.['maxlength']">
+          Please enter a valid mobile number
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group p-3 col-7 ">
+      <button type="submit" class="form-control btn btn-info" [disabled]="!templateForm.valid">Submit</button>
+    </div>
+
+  </form>
+</div>
