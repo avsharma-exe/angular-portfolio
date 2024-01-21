@@ -8,15 +8,16 @@
       <div class="col-12 formTypeButton">
         <h5>
           For a different flavour of form ->
-          <span><button #switcher type="button" class="btn btn-outline-info" (click)="onClick()">Touch here</button>
+          <span>
+            <button #switcher type="button" class="btn btn-outline-info" (click)="onClick()">Touch here</button>
           </span>
         </h5>
       </div>
     </div>
 
     <div class="row justify-content-center align-item-center">
-      <app-template-form class="shadow col-10 animate-me forms-here" *ngIf="!this.formFlag"></app-template-form>
-      <app-reactive-form class="shadow col-10 animate-me forms-here" *ngIf="this.formFlag"></app-reactive-form>
+      <app-template-form class="shadow col-10 animate-me" *ngIf="!this.formFlag"></app-template-form>
+      <app-reactive-form class="shadow col-10 animate-me" *ngIf="this.formFlag"></app-reactive-form>
     </div>
   </div>
 </section>
