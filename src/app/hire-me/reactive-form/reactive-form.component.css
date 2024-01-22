@@ -2,29 +2,31 @@
 .reactive-form {
   animation: animate 5s ease-in-out infinite;
   transition: all 1s ease-in-out;
-}
-.btn-info {
-  color: #1D9AF2;
-  background-color: #292D3E;
-  border: 1px solid #1D9AF2;
-  border-radius: 4px;
-  padding: 0 15px;
-  cursor: pointer;
-  height: 32px;
-  font-size: 14px;
-  transition: all 0.2s ease-in-out;
+
+  .btn-info {
+    color: #1D9AF2;
+    background-color: #292D3E;
+    border: 1px solid #1D9AF2;
+    border-radius: 4px;
+    padding: 0 15px;
+    cursor: pointer;
+    height: 32px;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-info:hover {
+   box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+   transform: translateX(-3px);
+  }
+
+  @keyframes animate {
+    0%, 100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+  }
 }
 
-.btn-info:hover {
- box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
- transform: translateX(-3px);
-}
-
-@keyframes animate {
-  0%, 100%{
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-  50%{
-      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-}

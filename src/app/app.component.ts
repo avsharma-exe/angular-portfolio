@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from "./home/home.component";
 import { ProjectComponent } from "./project/project.component";
@@ -13,6 +13,16 @@ import { HireMeComponent } from "./hire-me/hire-me.component";
     styleUrl: './app.component.css',
     imports: [CommonModule, RouterOutlet, HeaderComponent, HomeComponent, ProjectComponent, HireMeComponent]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  activeRoute: ActivatedRoute = inject(ActivatedRoute);
+  ngOnInit(): void {
+    this.activeRoute.fragment.subscribe((fragment)=>{
+      this.jumpToSection(fragment)
+    })
+  }
   title = 'one-simple-life';
+
+  jumpToSection (fragment) {
+    document.getElementById(fragment).scrollIntoView({behavior: 'smooth'})
+  }
 }
